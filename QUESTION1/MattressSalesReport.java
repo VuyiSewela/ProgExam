@@ -47,22 +47,13 @@ public class MattressSalesReport {
             }
         }
 
-        // Calculate the average across 9 sales entries
-        double averageSales = (double) totalSales / 9;
+       // Create a Product object using the sales data.
+// IMPORTANT: This assumes your Product class has
+// a constructor accepting String[] and int[][].
+Product product = new Product(products, sales);
 
-        // Display the sales report
-        System.out.println("\nPRODUCT SALES REPORT - 2026");
-        System.out.println("************************************");
-        System.out.println("TOTAL PRODUCT SALES: " + totalSales);
-        System.out.printf(
-            "AVERAGE PRODUCT SALES: %.2f%n",
-            averageSales
-        );
-        System.out.println(
-            "MOST POPULAR PRODUCT: "
-            + popularProduct + "(" + highestSales + ")"
-        );
+// Print the report using the PrintProduct class.
+PrintProduct.printReport(product);
 
-        input.close();
-    }
-}
+// Close Scanner
+input.close();
